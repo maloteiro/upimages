@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PROJECT>
+  <WIVERSION>5.0.17</WIVERSION>
+  <DEFINITION>
+    <TITLE>Upload de Imagens</TITLE>
+  </DEFINITION>
+  <INIT-PARAMS>
+    <INIT-PARAM ID="grid.linkIndexSize">
+      <VALUE><![CDATA[10]]></VALUE>
+    </INIT-PARAM>
+  </INIT-PARAMS>
+  <FUNCTIONS>
+    <FUNCTION ID="DateFormat" CLASS="br.com.webinside.runtime.function.DateFormat" />
+    <FUNCTION ID="DecodeDES" CLASS="br.com.webinside.runtime.function.DecodeDES" />
+    <FUNCTION ID="EncodeDES" CLASS="br.com.webinside.runtime.function.EncodeDES" />
+    <FUNCTION ID="EncodeMD5" CLASS="br.com.webinside.runtime.function.EncodeMD5" />
+    <FUNCTION ID="EncodeSHA1" CLASS="br.com.webinside.runtime.function.EncodeSHA1" />
+    <FUNCTION ID="Eval" CLASS="br.com.webinside.runtime.function.Eval" />
+    <FUNCTION ID="ExtractPassword" CLASS="br.com.webinside.runtime.function.ExtractPassword" />
+    <FUNCTION ID="FileCopy" CLASS="br.com.webinside.runtime.function.FileCopy" />
+    <FUNCTION ID="HtmlFilter" CLASS="br.com.webinside.runtime.function.HtmlFilter" />
+    <FUNCTION ID="If" CLASS="br.com.webinside.runtime.function.If" />
+    <FUNCTION ID="Mkdir" CLASS="br.com.webinside.runtime.function.Mkdir" />
+    <FUNCTION ID="NumberFormat" CLASS="br.com.webinside.runtime.function.NumberFormat" />
+    <FUNCTION ID="Piece" CLASS="br.com.webinside.runtime.function.Piece" />
+    <FUNCTION ID="Random" CLASS="br.com.webinside.runtime.function.Random" />
+    <FUNCTION ID="TextFormat" CLASS="br.com.webinside.runtime.function.TextFormat" />
+    <FUNCTION ID="GenericFormat" CLASS="br.com.webinside.runtime.function.GenericFormat" />
+    <FUNCTION ID="SecureVar" CLASS="br.com.webinside.runtime.function.SecureVar" />
+    <FUNCTION ID="In" CLASS="br.com.webinside.runtime.function.In" />
+    <FUNCTION ID="Include" CLASS="br.com.webinside.runtime.function.Include" />
+    <FUNCTION ID="HasRole" CLASS="br.com.webinside.runtime.function.HasRole" />
+    <FUNCTION ID="NumberList" CLASS="br.com.webinside.runtime.function.NumberList" />
+    <FUNCTION ID="OrderBy" CLASS="br.com.webinside.runtime.function.OrderBy" />
+    <FUNCTION ID="SVList" CLASS="br.com.webinside.runtime.function.SVList" />
+    <FUNCTION ID="WebResource" CLASS="br.com.webinside.runtime.function.WebResource" />
+    <FUNCTION ID="tf" CLASS="br.com.webinside.runtime.function.TextFormat" />
+    <FUNCTION ID="df" CLASS="br.com.webinside.runtime.function.DateFormat" />
+    <FUNCTION ID="nf" CLASS="br.com.webinside.runtime.function.NumberFormat" />
+    <FUNCTION ID="gf" CLASS="br.com.webinside.runtime.function.GenericFormat" />
+    <FUNCTION ID="md5" CLASS="br.com.webinside.runtime.function.EncodeMD5" />
+    <FUNCTION ID="sha1" CLASS="br.com.webinside.runtime.function.EncodeSHA1" />
+    <FUNCTION ID="nl" CLASS="br.com.webinside.runtime.function.NumberList" />
+    <FUNCTION ID="sv" CLASS="br.com.webinside.runtime.function.SecureVar" />
+    <FUNCTION ID="fc" CLASS="br.com.webinside.runtime.function.FileCopy" />
+    <FUNCTION ID="wr" CLASS="br.com.webinside.runtime.function.WebResource" />
+  </FUNCTIONS>
+</PROJECT>
+

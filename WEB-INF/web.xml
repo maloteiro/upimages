@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+  version="2.5">
+
+<display-name>WEBINSIDE - Upload de Imagens</display-name>
+
+<context-param>
+   <description>Quando true persite as variaveis app. ao recarregar a aplicação</description>
+   <param-name>persistApp</param-name>
+   <param-value>false</param-value>
+</context-param>
+
+<listener>
+   <listener-class>br.com.webinside.runtime.util.WIContextListener</listener-class>
+</listener>
+
+<servlet>
+    <servlet-name>upimages_project</servlet-name>
+    <jsp-file>/project.jsp</jsp-file>
+    <load-on-startup>1</load-on-startup>
+</servlet>
+
+<servlet>
+    <servlet-name>upimages_wsp</servlet-name>
+    <servlet-class>br.com.webinside.runtime.core.Execute</servlet-class>
+</servlet>
+
+<servlet>
+    <servlet-name>upimages_webservice</servlet-name>
+    <servlet-class>br.com.webinside.runtime.core.WebService</servlet-class>
+</servlet>
+
+<servlet>
+    <servlet-name>tiles</servlet-name>
+    <servlet-class>org.apache.tiles.web.startup.TilesServlet</servlet-class>
+    <init-param>
+        <param-name>org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG</param-name>
+        <param-value>/WEB-INF/tiles.xml</param-value>
+    </init-param>
+    <load-on-startup>2</load-on-startup>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>upimages_wsp</servlet-name>
+    <url-pattern>*.wsp</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+    <servlet-name>upimages_webservice</servlet-name>
+    <url-pattern>*.ws</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+    <servlet-name>upimages_webservice</servlet-name>
+    <url-pattern>*.wsdl</url-pattern>
+</servlet-mapping>
+
+<!-- Configura o tempo máximo de inatividade da sessão -->
+<session-config>
+    <session-timeout>60</session-timeout>
+</session-config>
+
+<welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+</welcome-file-list>
+
+<error-page>
+    <exception-type>br.com.webinside.runtime.exception.SessionTimeoutException</exception-type>
+    <location>/expired.jsp</location>
+</error-page>
+
+<error-page>
+    <exception-type>br.com.webinside.runtime.exception.GenericConnectionException</exception-type>
+    <location>/error.jsp</location>
+</error-page>
+
+<security-constraint> 
+   <display-name>Restrict OFF Documents</display-name>
+   <web-resource-collection>
+       <web-resource-name>OFF</web-resource-name>
+       <url-pattern>*.off</url-pattern>
+   </web-resource-collection>
+   <auth-constraint/>
+</security-constraint>
+
+<jsp-config>
+   <taglib>
+      <taglib-uri>/wicore</taglib-uri> 
+      <taglib-location>/WEB-INF/wicore.tld</taglib-location> 
+   </taglib>
+   <taglib>
+      <taglib-uri>/wi</taglib-uri> 
+      <taglib-location>/WEB-INF/wi.tld</taglib-location> 
+   </taglib>
+</jsp-config>
+
+</web-app>

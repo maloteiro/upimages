@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_0.xsd"
+    version="2.0">
+
+  <tlibversion>1.0</tlibversion>
+  <jspversion>2.0</jspversion>
+  <shortname>wicore</shortname>
+  <info>WebIntegrator Tag Library</info>
+
+  <tag>
+    <name>initProject</name>
+    <tagclass>br.com.webinside.runtime.component.taglib.InitProject</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>Define o projeto</info>
+  </tag>
+
+  <tag>
+    <name>addProjectProperty</name>
+    <tagclass>br.com.webinside.runtime.component.taglib.ProjectProperty</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>Adiciona uma propriedade do projeto gerenciada como coleção</info>
+    <attribute>
+      <name>type</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>name</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>value</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>setProjectElement</name>
+    <tagclass>br.com.webinside.runtime.component.taglib.ProjectElement</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>Define um elemento do projeto</info>
+    <attribute>
+      <name>type</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>name</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>realName</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>setGridElement</name>
+    <tagclass>br.com.webinside.runtime.component.taglib.GridElement</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <info>Executa a geração de um elemento do Grid</info>
+  </tag>
+
+  <tag>
+    <name>setWebServiceElement</name>
+    <tagclass>br.com.webinside.runtime.component.taglib.WebServiceElement</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>Define um elemento do webservice</info>
+    <attribute>
+      <name>webservice</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>method</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>name</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>setPropertyUser</name>
+    <tagclass>br.com.webinside.runtime.component.taglib.PropertyUser</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>Define a propriedade USER de um componente</info>
+    <attribute>
+      <name>name</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>user</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>pass</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>setPropertyByMethod</name>
+    <tagclass>br.com.webinside.runtime.component.taglib.PropertyByMethod</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>Define uma propriedade generica baseada no metodo</info>
+    <attribute>
+      <name>name</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>method</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>arg1</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>arg2</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>initPage</name>
+    <tagclass>br.com.webinside.runtime.component.taglib.InitPage</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <info>Inicializa uma página</info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>endPage</name>
+    <tagclass>br.com.webinside.runtime.component.taglib.EndPage</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <info>Finaliza uma página</info>
+  </tag>
+
+  <tag>
+    <name>setPageElement</name>
+    <tagclass>br.com.webinside.runtime.component.taglib.PageElement</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>Define um elemento da página</info>
+    <attribute>
+      <name>type</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>name</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>addPageValidation</name>
+    <tagclass>br.com.webinside.runtime.component.taglib.PageValidation</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>Adiciona uma validação de pagina gerenciada como coleção</info>
+    <attribute>
+      <name>name</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>value</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>executeCore</name>
+    <tagclass>br.com.webinside.runtime.component.taglib.ExecuteCore</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>Executa uma lógica do WI (Core)</info>
+    <attribute>
+      <name>type</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>name</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>importParameters</name>
+    <tagclass>br.com.webinside.runtime.component.taglib.ImportParameters</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>Executa a importação de variáveis</info>
+    <attribute>
+      <name>expr</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>generateGrid</name>
+    <tagclass>br.com.webinside.runtime.component.taglib.GenerateGrid</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>Executa a geração de um Grid</info>
+    <attribute>
+      <name>name</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>generateCombo</name>
+    <tagclass>br.com.webinside.runtime.component.taglib.GenerateCombo</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>Executa a geração de uma Combo</info>
+    <attribute>
+      <name>name</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+</taglib>
+

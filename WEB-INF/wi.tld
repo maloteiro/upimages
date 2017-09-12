@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_0.xsd"
+    version="2.0">
+    
+  <tlibversion>1.0</tlibversion>
+  <jspversion>2.0</jspversion>
+  <shortname>wi</shortname>
+  <info>WebIntegrator User Tag Library</info>
+
+  <tag>
+    <name>precompile</name>
+    <tagclass>br.com.webinside.runtime.integration.taglib.PreCompile</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>Executa a precompilação dos JSPs</info>
+  </tag>
+
+  <tag>
+    <name>menu</name>
+    <tagclass>br.com.webinside.runtime.integration.taglib.Menu</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <info>Processa Menu com hasrole</info>
+  </tag>
+
+  <tag>
+    <name>function</name>
+    <tagclass>br.com.webinside.runtime.integration.taglib.Function</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>Executa uma função</info>
+    <attribute>
+      <name>expr</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>out</name>
+    <tagclass>br.com.webinside.runtime.integration.taglib.Out</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>Retorna uma variável do wi</info>
+    <attribute>
+      <name>var</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>debug</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>set</name>
+    <tagclass>br.com.webinside.runtime.integration.taglib.Set</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>Transforma uma variável do wi em variável java</info>
+    <attribute>
+      <name>var</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>value</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>scope</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>test</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>validation</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>produce</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>remove</name>
+    <tagclass>br.com.webinside.runtime.integration.taglib.Remove</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>Remove uma variável do wi</info>
+    <attribute>
+      <name>var</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>script</name>
+    <tagclass>br.com.webinside.runtime.integration.taglib.Script</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>Inclui um script caso ele exista e já não tenha sido incluido</info>
+    <attribute>
+      <name>src</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>useParent</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>rnd</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>style</name>
+    <tagclass>br.com.webinside.runtime.integration.taglib.Style</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>Inclui um style caso ele exista e já não tenha sido incluido</info>
+    <attribute>
+      <name>href</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>media</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>useParent</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>rnd</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>produce</name>
+    <tagclass>br.com.webinside.runtime.integration.taglib.Produce</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <info>Efetua o Producer no body</info>
+    <attribute>
+      <name>var</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>enabled</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>compact</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>if</name>
+    <tagclass>br.com.webinside.runtime.integration.taglib.If</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <info>Processa uma função If</info>
+    <attribute>
+      <name>test</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>var</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>validation</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+</taglib>
+

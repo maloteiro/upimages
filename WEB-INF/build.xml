@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<project name="buildWar" default="make" basedir=".">
+
+<target name="make" depends="init, makeBuild, copyProfile, makeWar, makeEar" />
+
+<target name="init">
+  <fail unless="appName" message="Defina o nome do projeto. [appName]" />
+  <property name="webDir" value="../"/>
+  <property name="buildDir" value="${basedir}/build"/>
+  <property name="warFile" value="${appName}.war"/>
+  <property name="warDir" value="${buildDir}/war"/>
+  <property name="earFile" value="${appName}.ear"/>
+</target>
+
+<target name="makeBuild" depends="init">
+  <!-- Limpando diretório para construção do WAR -->
+  <delete dir="${buildDir}"/>
+  <mkdir dir="${warDir}"/>
+
+  <!-- Construindo cópia do diretório WEB -->
+  <copy todir="${warDir}">
+    <fileset dir="${webDir}" includes="**/*.*"/> 
+  </copy>
+ 
+  <!-- Removendo diretórios desnecessários -->
+  <delete>
+    <fileset dir="${warDir}" includes="project-*.*"/>
+  </delete>
+  <delete dir="${warDir}/docs"/>
+  <delete file="${warDir}/WEB-INF/${appName}.zip"/>  
+  <delete file="${warDir}/WEB-INF/build.xml"/>
+  <delete file="${warDir}/WEB-INF/application.xml"/>
+  <delete file="${warDir}/WEB-INF/jboss-app.xml"/>
+  <delete dir="${warDir}/WEB-INF/build"/>			
+  <delete dir="${warDir}/WEB-INF/src"/>  
+  <delete dir="${warDir}/WEB-INF/logs"/>  
+  <delete dir="${warDir}/WEB-INF/definitions"/>
+  
+  <!-- Descomentar para WebSphere -->
+<!--
+  <delete>
+    <fileset dir="${warDir}/WEB-INF/lib" includes="jakarta-jstl-*.jar"/>
+    <fileset dir="${warDir}/WEB-INF/lib" includes="jakarta-standard-*.jar"/>
+  </delete>
+-->
+  
+</target>
+
+<target name="copyProfile" depends="makeBuild" if="profile">
+  <!-- Copiando profile especifico -->
+  <copy overwrite="true"
+    file="${webDir}/project-${profile}.jsp" 
+    tofile="${warDir}/project.jsp"/>
+</target>
+
+<target name="makeWar" depends="makeBuild">
+  <!-- Construindo arquivo WAR -->
+  <war basedir="${warDir}"
+    destfile="${buildDir}/${warFile}" 
+    webxml="${warDir}/WEB-INF/web.xml"/>
+  <delete dir="${warDir}"/>
+</target>
+
+<target name="makeEar" depends="makeWar" if="ear">
+  <!-- Construindo arquivo EAR -->
+  <copy overwrite="true"
+    file="${webDir}/WEB-INF/application.xml" 
+    tofile="${buildDir}/META-INF/application.xml"/>
+  <copy overwrite="true"
+    file="${webDir}/WEB-INF/jboss-app.xml" 
+    tofile="${buildDir}/META-INF/jboss-app.xml"/>
+  <ear basedir="${buildDir}"
+    destfile="${buildDir}/${earFile}"
+    appxml="${buildDir}/META-INF/application.xml"/>
+  <delete dir="${buildDir}/META-INF"/>  
+  <delete file="${buildDir}/${warFile}"/>
+</target>
+
+</project>

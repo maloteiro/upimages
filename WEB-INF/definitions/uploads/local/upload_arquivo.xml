@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<UPLOAD TYPE="LOCAL">
+  <DESCRIPTION>Upload Local: upload_arquivo</DESCRIPTION>
+  <DIRECTORY>/|wi.proj.path|/arquivos/</DIRECTORY>
+  <FILE>|tmp.arquivo|</FILE>
+  <CREATEDIR>ON</CREATEDIR>
+  <FORMFIELD>tmp.arquivo</FORMFIELD>
+</UPLOAD>
+

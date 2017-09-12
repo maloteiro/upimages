@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<jboss-app>
+  <loader-repository>upimages:loader=upimages.ear</loader-repository>
+</jboss-app>

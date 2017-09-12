@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PAGE>
+  <DEFINITION>
+    <TITLE>Página upload</TITLE>
+    <MIME>html</MIME>
+    <NOLOGIN>ON</NOLOGIN>
+    <SECURITY>OFF</SECURITY>
+    <BROWSERCACHE>OFF</BROWSERCACHE>
+    <RERENDER>OFF</RERENDER>
+    <SYSPAGE>OFF</SYSPAGE>
+  </DEFINITION>
+  <PREPAGE>
+    <UPLOADREFS>
+      <UPLOADREF SEQ="1">
+        <UPLOADID>upload_arquivo</UPLOADID>
+        <CONDITION>true</CONDITION>
+        <TYPE>LOCAL</TYPE>
+      </UPLOADREF>
+    </UPLOADREFS>
+    <INDEX>
+      <UPLOADREFS SEQ="1" />
+    </INDEX>
+  </PREPAGE>
+</PAGE>
+

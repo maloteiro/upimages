@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Página enviar</title>
+<meta http-equiv='pragma' content='no-cache'>
+<meta http-equiv='expires' content='0'>
+  	<link href="https://rawgithub.com/hayageek/jquery-upload-file/master/css/uploadfile.css" rel="stylesheet">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="https://rawgithub.com/hayageek/jquery-upload-file/master/js/jquery.uploadfile.min.js"></script>
+	<link type='text/css' rel='stylesheet' href='/|wi.proj.id|/css/page.css'/>
+	<script type='text/javascript' src='/|wi.proj.id|/js/page.js'>//</script>
+	<script type='text/javascript' src='/|wi.proj.id|/|wi.page.id|.js'>//</script>
+</head>
+<body>
+<h3>
+<p>PROJETO: Upload de Imagens</p>
+<p>PÁGINA: Página enviar</p>
+</h3>
+
+<div id="fileuploader">Upload</div>
+<script>
+$(document).ready(function() {
+	$("#fileuploader").uploadFile({
+      	url:"/|wi.proj.id|/upload.wsp",
+		fileName:"tmp.arquivo"
+	});
+});
+</script>
+</body>
+</html>
